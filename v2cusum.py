@@ -155,9 +155,9 @@ def main():
 def test():
     ''' input is 2D synthetic data '''
     data = np.genfromtxt(sys.argv[1], delimiter=',')
-    for limit in xrange(1,20):
+    for limit in xrange(1,100):
         #out = open(str(limit)+'.d', 'w')
-        model = CUSUM(delta=2., h=limit*0.05)
+        model = CUSUM(delta=2, h=limit*0.01)
 
         tp,fp,tn,fn = 0,0,0,0
         for idx, exmp in enumerate(data[:,:2]):
